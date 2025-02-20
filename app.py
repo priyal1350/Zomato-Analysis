@@ -13,6 +13,7 @@ st.title("🍽️ Zomato Data Analysis")
 @st.cache_data
 def load_data():
     try:
+        url = "https://raw.githubusercontent.com/priyal1350/Zomato-Analysis/main/zomato.csv"
         df = pd.read_csv('zomato.csv', encoding='utf-8')
         print("Dataset loaded successfully!")
         return df
