@@ -20,7 +20,6 @@ This project is a **data visualization and analysis** app built using **Streamli
 
 ## 📂 Dataset
 The zomato.csv file contains the restaurant dataset.
-If not included due to file size, you can download it from Google Drive.
 
 ## 🎯 Live Demo
 You can try the live app here: [your-streamlit-deployment-link]
