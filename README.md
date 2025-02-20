@@ -18,9 +18,9 @@ This project is a **data visualization and analysis** app built using **Streamli
 - Correlation Heatmap
 - Top 10 Restaurants by Rating & Votes
 
-📂 Dataset
+## 📂 Dataset
 The zomato.csv file contains the restaurant dataset.
 If not included due to file size, you can download it from Google Drive.
 
-🎯 Live Demo
+## 🎯 Live Demo
 You can try the live app here: [your-streamlit-deployment-link]
