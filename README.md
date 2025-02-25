@@ -1,7 +1,8 @@
-🍽 Zomato Restaurant Analysis
+# 🍽 Zomato Restaurant Analysis
+
 This project is a data visualization and analysis app built using Streamlit to explore restaurant data from Zomato. The dataset is automatically fetched from Kaggle using the Kaggle API.
 
-📊 Features
+## 📊 Features
 Count Plot of Various Locations
 Visualizing Online Orders
 Book Table Analysis
@@ -15,15 +16,16 @@ No. of Votes per Location
 Top Cuisines Analysis
 Correlation Heatmap
 Top 10 Restaurants by Rating & Votes
-📂 Dataset
+
+## 📂 Dataset
 The dataset is fetched from Kaggle using the API and is no longer stored locally.
 
-📌 Dataset Link: Zomato Dataset on Kaggle
+# 📌 Dataset Link: Zomato Dataset on Kaggle
 
-🔗 How the dataset is accessed
+# 🔗 How the dataset is accessed
 The Kaggle API is used to download the dataset dynamically when the app runs.
 Ensure you have a Kaggle API key set up in your environment for seamless access.
-🚀 Deployment
+## 🚀 Deployment
 This app is deployed on Streamlit Cloud.
 
-🔗 Live Demo: Zomato Restaurant Analysis
+## 🔗 Live Demo: Zomato Restaurant Analysis
