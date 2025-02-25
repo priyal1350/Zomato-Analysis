@@ -33,6 +33,4 @@ This app is deployed on **Streamlit Cloud**.
 
 🔗 **Live Demo:** [Zomato Restaurant Analysis App](https://zomato--analysis.streamlit.app/)  
 
----
-
-✅ **Everything looks great!** This version is well-organized and user-friendly. Let me know if you need any further modifications! 🚀🔥  
+---  
