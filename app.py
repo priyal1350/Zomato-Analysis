@@ -1,33 +1,4 @@
-# import pandas as pd
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-# import streamlit as st
 
-# # Set style for plots
-# plt.style.use('dark_background')
-
-# # Load Dataset
-# st.title("🍽️ Zomato Data Analysis")
-
-# @st.cache_data
-# def load_data():
-#     try:
-#         df = pd.read_csv('zomato.csv', encoding='utf-8')
-#         print("Dataset loaded successfully!")
-#         return df
-#     except Exception as e:
-#         st.error(f"Error loading CSV: {e}")
-#         return pd.DataFrame()
-
-# df = load_data()
-
-# if df.empty:
-#     st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
-#     st.stop()
-
-# st.write("### Preview of Dataset:")
-# st.dataframe(df.head())
 import os
 import pandas as pd
 import numpy as np
