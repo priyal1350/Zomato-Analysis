@@ -1,32 +1,38 @@
-# 🍽 Zomato Restaurant Analysis
+# 🍽 Zomato Restaurant Analysis  
 
-This project is a data visualization and analysis app built using Streamlit to explore restaurant data from Zomato. The dataset is automatically fetched from Kaggle using the Kaggle API.
+This project is a **data visualization and analysis** app built using **Streamlit** to explore restaurant data from **Zomato**. The dataset is automatically fetched from **Kaggle** using the **Kaggle API**.  
 
-## 📊 Features
-- Count Plot of Various Locations
-- Visualizing Online Orders
-- Book Table Analysis
-- Online Order vs Ratings
-- Book Table vs Ratings
-- Location-wise Online Order Facility
-- Location-wise Book Table Facility
-- Types of Restaurants vs Ratings
-- Grouping Restaurants by Location
-- No. of Votes per Location
-- Top Cuisines Analysis
-- Correlation Heatmap
-- Top 10 Restaurants by Rating & Votes
+## 📊 Features  
+- 📍 Count Plot of Various Locations  
+- 📊 Visualizing Online Orders  
+- 📅 Book Table Analysis  
+- 🔄 Online Order vs Ratings  
+- 🏷️ Book Table vs Ratings  
+- 🌎 Location-wise Online Order Facility  
+- 🍽️ Location-wise Book Table Facility  
+- 🍔 Types of Restaurants vs Ratings  
+- 🏠 Grouping Restaurants by Location  
+- 🗳️ No. of Votes per Location  
+- 🍜 Top Cuisines Analysis  
+- 🔥 Correlation Heatmap  
+- ⭐ Top 10 Restaurants by Rating & Votes  
 
+## 📂 Dataset  
+The dataset is fetched dynamically from **Kaggle** using the **Kaggle API** and is not stored locally.  
 
-## 📂 Dataset
-The dataset is fetched from Kaggle using the API and is no longer stored locally.
+🔗 **Dataset Link:** [Zomato Dataset on Kaggle](https://www.kaggle.com/datasets/priyaljain12/zomato-dataset-for-restaurant-analysis)  
 
-### 📌 Dataset Link: https://www.kaggle.com/datasets/priyaljain12/zomato-dataset-for-restaurant-analysis
+### 🔗 How the dataset is accessed  
+- The dataset is **downloaded dynamically** from **Kaggle** each time the app runs.  
+- To use the Kaggle API, make sure you have:  
+  - A **Kaggle account**  
+  - Your **Kaggle API key** configured in your environment  
 
-### 🔗 How the dataset is accessed
-The Kaggle API is used to download the dataset dynamically when the app runs.
-Ensure you have a Kaggle API key set up in your environment for seamless access.
-## 🚀 Deployment
-This app is deployed on Streamlit Cloud.
+## 🚀 Deployment  
+This app is deployed on **Streamlit Cloud**.  
 
-### 🔗 Live Demo: https://zomato--analysis.streamlit.app/
+🔗 **Live Demo:** [Zomato Restaurant Analysis App](https://zomato--analysis.streamlit.app/)  
+
+---
+
+✅ **Everything looks great!** This version is well-organized and user-friendly. Let me know if you need any further modifications! 🚀🔥  
