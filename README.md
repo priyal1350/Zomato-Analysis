@@ -21,9 +21,9 @@ This project is a data visualization and analysis app built using Streamlit to e
 ## 📂 Dataset
 The dataset is fetched from Kaggle using the API and is no longer stored locally.
 
-# 📌 Dataset Link: Zomato Dataset on Kaggle
+### 📌 Dataset Link: Zomato Dataset on Kaggle
 
-# 🔗 How the dataset is accessed
+### 🔗 How the dataset is accessed
 The Kaggle API is used to download the dataset dynamically when the app runs.
 Ensure you have a Kaggle API key set up in your environment for seamless access.
 ## 🚀 Deployment
