@@ -1,41 +1,41 @@
-import os
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
+# import os
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import streamlit as st
 
-# Set style for plots
-plt.style.use('dark_background')
+# # Set style for plots
+# plt.style.use('dark_background')
 
-# Load Dataset
-st.title("🍽️ Zomato Data Analysis")
+# # Load Dataset
+# st.title("🍽️ Zomato Data Analysis")
 
-@st.cache_data
-def load_data():
-    dataset_path = "zomato.csv"
+# @st.cache_data
+# def load_data():
+#     dataset_path = "zomato.csv"
 
-    # If file is not present, download from Kaggle
-    if not os.path.exists(dataset_path):
-        st.info("Downloading dataset from Kaggle...")
-        os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
+#     # If file is not present, download from Kaggle
+#     if not os.path.exists(dataset_path):
+#         st.info("Downloading dataset from Kaggle...")
+#         os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
 
-    try:
-        df = pd.read_csv(dataset_path, encoding='utf-8')
-        print("Dataset loaded successfully!")
-        return df
-    except Exception as e:
-        st.error(f"Error loading CSV: {e}")
-        return pd.DataFrame()
+#     try:
+#         df = pd.read_csv(dataset_path, encoding='utf-8')
+#         print("Dataset loaded successfully!")
+#         return df
+#     except Exception as e:
+#         st.error(f"Error loading CSV: {e}")
+#         return pd.DataFrame()
 
-df = load_data()
+# df = load_data()
 
-if df.empty:
-    st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
-    st.stop()
+# if df.empty:
+#     st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
+#     st.stop()
 
-st.write("### Preview of Dataset:")
-st.dataframe(df.head())
+# st.write("### Preview of Dataset:")
+# st.dataframe(df.head())
 
 # import os
 # import pandas as pd
@@ -80,6 +80,65 @@ st.dataframe(df.head())
 
 # st.write("### Preview of Dataset:")
 # st.dataframe(df.head())
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
+# Set style for plots
+plt.style.use('dark_background')
+
+st.title("🍽️ Zomato Data Analysis")
+
+# Upload kaggle.json file
+st.sidebar.header("Upload Kaggle API Key")
+kaggle_file = st.sidebar.file_uploader("Upload kaggle.json", type="json")
+
+if kaggle_file:
+    os.makedirs(os.path.expanduser("~/.kaggle"), exist_ok=True)
+    kaggle_path = os.path.expanduser("~/.kaggle/kaggle.json")
+    
+    with open(kaggle_path, "wb") as f:
+        f.write(kaggle_file.getvalue())
+
+    st.sidebar.success("✅ Kaggle API key uploaded successfully!")
+
+@st.cache_data
+def load_data():
+    dataset_path = "zomato.csv"
+
+    # Check if file exists
+    if not os.path.isfile(dataset_path):
+        st.info("📥 Downloading dataset from Kaggle...")
+
+        # Ensure Kaggle API key is available
+        kaggle_path = os.path.expanduser("~/.kaggle/kaggle.json")
+        if not os.path.exists(kaggle_path):
+            st.error("⚠️ Kaggle API key is missing! Please upload your kaggle.json file in the sidebar.")
+            return pd.DataFrame()
+
+        # Download dataset
+        os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
+
+    # Load dataset
+    try:
+        df = pd.read_csv(dataset_path, encoding='utf-8')
+        print("✅ Dataset loaded successfully!")
+        return df
+    except Exception as e:
+        st.error(f"❌ Error loading CSV: {e}")
+        return pd.DataFrame()
+
+df = load_data()
+
+if df.empty:
+    st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
+    st.stop()
+
+st.write("### Preview of Dataset:")
+st.dataframe(df.head())
 
 
 # Cleaning Data
