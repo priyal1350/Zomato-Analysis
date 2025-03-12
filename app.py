@@ -1,41 +1,41 @@
-import os
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
+# import os
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import streamlit as st
 
-# Set style for plots
-plt.style.use('dark_background')
+# # Set style for plots
+# plt.style.use('dark_background')
 
-# Load Dataset
-st.title("🍽️ Zomato Data Analysis")
+# # Load Dataset
+# st.title("🍽️ Zomato Data Analysis")
 
-@st.cache_data
-def load_data():
-    dataset_path = "zomato.csv"
+# @st.cache_data
+# def load_data():
+#     dataset_path = "zomato.csv"
 
-    # If file is not present, download from Kaggle
-    if not os.path.exists(dataset_path):
-        st.info("Downloading dataset from Kaggle...")
-        os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
+#     # If file is not present, download from Kaggle
+#     if not os.path.exists(dataset_path):
+#         st.info("Downloading dataset from Kaggle...")
+#         os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
 
-    try:
-        df = pd.read_csv(dataset_path, encoding='utf-8')
-        print("Dataset loaded successfully!")
-        return df
-    except Exception as e:
-        st.error(f"Error loading CSV: {e}")
-        return pd.DataFrame()
+#     try:
+#         df = pd.read_csv(dataset_path, encoding='utf-8')
+#         print("Dataset loaded successfully!")
+#         return df
+#     except Exception as e:
+#         st.error(f"Error loading CSV: {e}")
+#         return pd.DataFrame()
 
-df = load_data()
+# df = load_data()
 
-if df.empty:
-    st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
-    st.stop()
+# if df.empty:
+#     st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
+#     st.stop()
 
-st.write("### Preview of Dataset:")
-st.dataframe(df.head())
+# st.write("### Preview of Dataset:")
+# st.dataframe(df.head())
 
 # import os
 # import pandas as pd
@@ -80,6 +80,56 @@ st.dataframe(df.head())
 
 # st.write("### Preview of Dataset:")
 # st.dataframe(df.head())
+
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+import requests
+
+# Set style for plots
+plt.style.use('dark_background')
+
+# Streamlit title
+st.title("🍽️ Zomato Data Analysis")
+
+@st.cache_data
+def load_data():
+    dataset_path = "zomato.csv"
+    drive_url = "https://drive.google.com/uc?id=1g9msPCgeIvCcid4UEW4L4K9IBI7F5JP2"
+
+    # Download dataset if not already present
+    if not os.path.isfile(dataset_path):
+        st.info("Downloading dataset from Google Drive...")
+        response = requests.get(drive_url)
+
+        if response.status_code == 200:
+            with open(dataset_path, "wb") as file:
+                file.write(response.content)
+            st.success("✅ Download complete!")
+        else:
+            st.error("❌ Failed to download the dataset. Check the file permissions.")
+            return pd.DataFrame()
+
+    try:
+        df = pd.read_csv(dataset_path, on_bad_lines="skip", low_memory=False, encoding='utf-8')
+        st.success("✅ Dataset loaded successfully!")
+        return df
+    except Exception as e:
+        st.error(f"❌ Error loading CSV: {e}")
+        return pd.DataFrame()
+
+df = load_data()
+
+if df.empty:
+    st.error("⚠️ DataFrame is empty. Check if the file is shared publicly and formatted correctly.")
+    st.stop()
+
+st.write("### Preview of Dataset:")
+st.dataframe(df.head())
+
 
 
 # Rest of your code remains the same...
