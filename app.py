@@ -1,3 +1,42 @@
+# import os
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import streamlit as st
+
+# # Set style for plots
+# plt.style.use('dark_background')
+
+# # Load Dataset
+# st.title("🍽️ Zomato Data Analysis")
+
+# @st.cache_data
+# def load_data():
+#     dataset_path = "zomato.csv"
+
+#     # If file is not present, download from Kaggle
+#     if not os.path.exists(dataset_path):
+#         st.info("Downloading dataset from Kaggle...")
+#         os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
+
+#     try:
+#         df = pd.read_csv(dataset_path, encoding='utf-8')
+#         print("Dataset loaded successfully!")
+#         return df
+#     except Exception as e:
+#         st.error(f"Error loading CSV: {e}")
+#         return pd.DataFrame()
+
+# df = load_data()
+
+# if df.empty:
+#     st.error("⚠️ DataFrame is empty. Check if 'zomato.csv' exists and is not empty.")
+#     st.stop()
+
+# st.write("### Preview of Dataset:")
+# st.dataframe(df.head())
+
 import os
 import pandas as pd
 import numpy as np
@@ -5,8 +44,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-# Set style for plots
-plt.style.use('dark_background')
+# Load Kaggle API credentials securely
+kaggle_username = st.secrets["kaggle"]["username"]
+kaggle_key = st.secrets["kaggle"]["key"]
+
+# Save Kaggle API credentials as environment variables (needed for os.system)
+os.environ["KAGGLE_USERNAME"] = kaggle_username
+os.environ["KAGGLE_KEY"] = kaggle_key
 
 # Load Dataset
 st.title("🍽️ Zomato Data Analysis")
@@ -18,7 +62,7 @@ def load_data():
     # If file is not present, download from Kaggle
     if not os.path.exists(dataset_path):
         st.info("Downloading dataset from Kaggle...")
-        os.system("kaggle datasets download -d priyaljain12/zomato-dataset-for-restaurant-analysis -p . --unzip")
+        os.system(f"kaggle datasets download -d {kaggle_username}/zomato-dataset-for-restaurant-analysis -p . --unzip")
 
     try:
         df = pd.read_csv(dataset_path, encoding='utf-8')
