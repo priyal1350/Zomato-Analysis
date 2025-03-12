@@ -113,7 +113,7 @@ def load_data():
             return pd.DataFrame()
 
     try:
-        df = pd.read_csv(dataset_path, encoding='utf-8')
+        df = pd.read_csv(dataset_path, encoding='utf-8', on_bad_lines='skip')  # Skip malformed rows
         st.success("Dataset loaded successfully!")
         return df
     except Exception as e:
@@ -129,6 +129,7 @@ if df.empty:
 st.write("### Preview of Dataset:")
 st.dataframe(df.head())
 
+# Rest of your code remains the same...
 # Cleaning Data
 drop_cols = ['url', 'address', 'phone', 'menu_item', 'dish_liked', 'reviews_list']
 df.drop(columns=[col for col in drop_cols if col in df.columns], inplace=True, errors='ignore')
