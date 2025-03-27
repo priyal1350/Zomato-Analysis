@@ -23,9 +23,10 @@ The dataset is used in CSV format and was downloaded from Kaggle using the link 
 🔗 **Dataset Link:** [Zomato Dataset on Kaggle](https://www.kaggle.com/datasets/priyaljain12/zomato-dataset-for-restaurant-analysis)  
 
 ### 🔗 How the dataset is accessed  
-The dataset is stored locally as a CSV file.
-It was manually downloaded from Kaggle using the provided link.
-Ensure you have the CSV file available in the appropriate directory when running the app.
+
+- The dataset is used in CSV format and was downloaded from Kaggle using the link below.
+- Ensure you have the CSV file available locally when running the app.
+
 
 ## 🚀 Deployment  
 This app is deployed on **Streamlit Cloud**.  
