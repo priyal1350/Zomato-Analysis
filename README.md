@@ -18,15 +18,14 @@ This project is a **data visualization and analysis** app built using **Streamli
 - ⭐ Top 10 Restaurants by Rating & Votes  
 
 ## 📂 Dataset  
-The dataset is fetched dynamically from **Kaggle** using the **Kaggle API** and is not stored locally.  
+The dataset is used in CSV format and was downloaded from Kaggle using the link below.
 
 🔗 **Dataset Link:** [Zomato Dataset on Kaggle](https://www.kaggle.com/datasets/priyaljain12/zomato-dataset-for-restaurant-analysis)  
 
 ### 🔗 How the dataset is accessed  
-- The dataset is **downloaded dynamically** from **Kaggle** each time the app runs.  
-- To use the Kaggle API, make sure you have:  
-  - A **Kaggle account**  
-  - Your **Kaggle API key** configured in your environment  
+The dataset is stored locally as a CSV file.
+It was manually downloaded from Kaggle using the provided link.
+Ensure you have the CSV file available in the appropriate directory when running the app.
 
 ## 🚀 Deployment  
 This app is deployed on **Streamlit Cloud**.  
