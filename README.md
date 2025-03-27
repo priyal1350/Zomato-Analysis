@@ -20,7 +20,7 @@ This project is a **data visualization and analysis** app built using **Streamli
 ## 📂 Dataset  
 The dataset is used in CSV format and was downloaded from Kaggle using the link below.
 
-🔗 **Dataset Link:** [Zomato Dataset on Kaggle](https://www.kaggle.com/datasets/priyaljain12/zomato-dataset-for-restaurant-analysis)  
+🔗 **Dataset Link:** [Zomato Dataset on Kaggle](https://www.kaggle.com/datasets/priyaljain12/zomato-dataset)  
 
 ### 🔗 How the dataset is accessed  
 
