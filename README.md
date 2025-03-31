@@ -1,6 +1,6 @@
 # 🍽 Zomato Restaurant Analysis  
 
-This project is a **data visualization and analysis** app built using **Streamlit** to explore restaurant data from **Zomato**. The dataset is automatically fetched from **Kaggle** using the **Kaggle API**.  
+This project is a **data visualization and analysis** app built using **Streamlit** to explore restaurant data from **Zomato**.
 
 ## 📊 Features  
 - 📍 Count Plot of Various Locations  
